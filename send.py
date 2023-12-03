@@ -1,6 +1,7 @@
 import socket
+import argparse
 
-def udp_client(server_host='192.168.1.19', server_port=16384, message="Hello, UDP Server!"):
+def udp_client(server_host, server_port, message):
     # Create a socket for UDP
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -13,6 +14,15 @@ def udp_client(server_host='192.168.1.19', server_port=16384, message="Hello, UD
         # Close the socket
         sock.close()
 
-if __name__ == "__main__":
-    udp_client()
+def main():
+    parser = argparse.ArgumentParser(description='UDP Server')
+    parser.add_argument('--host', type=str, default='127.0.0.1', help='Host to send message')
+    parser.add_argument('--port', type=int, default=16384, help='Port to send message')
+    parser.add_argument('--message', type=str, default='Hello, UDP Server!', help='Message to send')
 
+    args = parser.parse_args()
+
+    udp_client(args.host, args.port, args.message)
+
+if __name__ == "__main__":
+    main()
