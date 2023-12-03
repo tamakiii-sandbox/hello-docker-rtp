@@ -6,7 +6,8 @@ RUN apt update -y && \
         jq \
         libavformat-dev \
         libavcodec-dev \
-        libavdevice-dev
+        libavdevice-dev \
+        portaudio19-dev
 
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
