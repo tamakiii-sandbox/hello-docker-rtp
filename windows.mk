@@ -22,4 +22,4 @@ up:
 	ffmpeg -f dshow -i audio="$(AUDIO_DEVICE)" -acodec libopus -f rtp rtp://$(CONTAINER_ADDRESS):$(CONTAINER_PORT)
 
 send:
-	python send.py --host $(IP_ADDRESS)
+	python udp-client.py --host $(IP_ADDRESS)

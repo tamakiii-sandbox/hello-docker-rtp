@@ -12,7 +12,7 @@ info:
 	@echo IP_ADDRESS=$(IP_ADDRESS)
 
 launch:
-	timeout $(TIMEOUT) python3 main.py
+	timeout $(TIMEOUT) python3 udp-server.py
 
 send:
-	python3 send.py --host $(IP_ADDRESS) --message $(MESSAGE)
+	python3 udp-client.py --host $(IP_ADDRESS) --message $(MESSAGE)
