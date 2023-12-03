@@ -6,4 +6,7 @@ help:
 	@cat $(firstword $(MAKEFILE_LIST))
 
 launch:
-	timeout $(TIMEOUT) python main.py
+	timeout $(TIMEOUT) python3 main.py
+
+send:
+	python3 send.py
