@@ -3,6 +3,7 @@ FROM python:3.11
 RUN apt update -y && \
     apt install -y \
         ffmpeg \
+        jq \
         libavformat-dev \
         libavcodec-dev \
         libavdevice-dev
